@@ -6,9 +6,10 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <Form autoComplete='off' labelCol={{ span: 10 }} wrapperCol={{span: 14}} onFinish={(values)=>{
-          console.log(values)
-        }}>
+        <Form autoComplete='off' labelCol={{ span: 10 }} wrapperCol={{span: 14}}
+        onFinish={(values)=>{console.log(values)}}
+        onFinishFailed={(error) => {console.log({error})}}
+        >
           <Form.Item name='fullName' label='Full Name' rules={[{
             required: true,
             message: 'Por favor entre com seu nome'
